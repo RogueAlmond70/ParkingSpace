@@ -6,13 +6,22 @@ import (
 	"log"
 )
 
+const (
+	DBHost = "db.host"
+	DBPass = "db.password"
+	DBPort = "db.port"
+	DBUser = "db.user"
+	DBName = "db.name"
+)
+
 func getConn() string {
 	psqlconn := fmt.Sprintf("host = %s port = %d user = %s password = %s dbname = %s sslmode=disable",
-		viper.GetString(config.DBHost),
-		viper.GetInt64(config.DBPort),
-		viper.GetString(config.DBUser),
-		viper.GetString(config.DBPass),
-		viper.GetString(config.DBName))
+		DBHost,
+		DBPort,
+		DBUser,
+		DBPass,
+		DBName,
+	)
 	return psqlconn
 }
 
@@ -25,6 +34,7 @@ func DBSetup() *sql.DB {
 	return db
 }
 
+/*
 func CreateTable(db *sql.DB) {
 	query := Constants.CreateTable
 	_, err := db.Exec(query)
@@ -32,3 +42,5 @@ func CreateTable(db *sql.DB) {
 		log.Fatal("Error creating table", err)
 	}
 }
+
+*/
