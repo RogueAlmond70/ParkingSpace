@@ -9,22 +9,6 @@ package Login
 // 1. Passwords must be hashed
 // 2. The system must be highly performant
 
-type user struct {
-	FirstName string
-	LastName  string
-	UserName  string
-	Password  string
-	Vehicles  []vehicle
-}
-
-// These fields will all need validation
-type vehicle struct {
-	Brand        string
-	Model        string
-	Size         string
-	registration string
-}
-
 // Will need a relational database to store the users, and link to however many vehicles they own
 
 func login(UserName string, Password string) bool {

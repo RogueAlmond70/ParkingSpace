@@ -1,26 +1,19 @@
-package UserDatabase
+package Postgres
 
 import (
 	"database/sql"
 	"fmt"
+	"home/aaron/snap/go/GolandProjects/ParkingSpace/Constants"
 	"log"
-)
-
-const (
-	DBHost = "db.host"
-	DBPass = "db.password"
-	DBPort = "db.port"
-	DBUser = "db.user"
-	DBName = "db.name"
 )
 
 func getConn() string {
 	psqlconn := fmt.Sprintf("host = %s port = %d user = %s password = %s dbname = %s sslmode=disable",
-		DBHost,
-		DBPort,
-		DBUser,
-		DBPass,
-		DBName,
+		Constants.DBHost,
+		Constants.DBPort,
+		Constants.DBUser,
+		Constants.DBPass,
+		Constants.DBName,
 	)
 	return psqlconn
 }
