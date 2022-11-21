@@ -5,19 +5,18 @@ import (
 	"home/aaron/snap/go/GolandProjects/ParkingSpace/Objects"
 )
 
-var Spiderman Objects.User
 var TestUser Objects.User
 var TestUser2 Objects.User
 var AaronUser Objects.User
-
-var SpiderVehicles []Objects.Vehicle
-var SpiderCar Objects.Vehicle
+var Spiderman Objects.User
 
 var TestCar Objects.Vehicle
 var TestCar2 Objects.Vehicle
+var SpiderCar Objects.Vehicle
 
 var TestVehicles []Objects.Vehicle
 var TestVehicles2 []Objects.Vehicle
+var SpiderVehicles []Objects.Vehicle
 
 func SetUpUserDBTest() DBInterface.UserDBTest {
 	var UserDB DBInterface.UserDBTest
