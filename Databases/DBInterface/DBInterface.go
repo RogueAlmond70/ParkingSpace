@@ -5,8 +5,6 @@ import (
 	"home/aaron/snap/go/GolandProjects/ParkingSpace/Objects"
 )
 
-// In here we will place our DB interface
-
 type UserDB interface {
 	checkIfUserIsValid(username string) bool
 	checkIfPasswordIsCorrect(password string) bool

@@ -1,4 +1,4 @@
-package Login
+package UserDBTest
 
 import (
 	"database/sql"
