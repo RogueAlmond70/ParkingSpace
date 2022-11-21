@@ -5,11 +5,11 @@ type User struct {
 	LastName  string
 	UserName  string
 	Password  string
-	Vehicles  []vehicle
+	Vehicles  []Vehicle
 }
 
 // These fields will all need validation
-type vehicle struct {
+type Vehicle struct {
 	Brand        string
 	Model        string
 	Size         string
