@@ -3,6 +3,7 @@ package UserDBTest
 import (
 	"home/aaron/snap/go/GolandProjects/ParkingSpace/Login"
 	"home/aaron/snap/go/GolandProjects/ParkingSpace/Objects"
+	"testing"
 )
 
 var TestUser Objects.User
@@ -57,4 +58,24 @@ func SetUpUserDBTest() Login.UserDBTest {
 	UserDB.DB = append(UserDB.DB, Spiderman, TestUser, TestUser2)
 
 	return UserDB
+}
+
+func TestCheckIfUserIsValid(t *testing.T) {
+	TestDB := SetUpUserDBTest()
+	var tests = []struct {
+		actual   bool
+		expected bool
+	}{
+		{TestDB.CheckIfUserIsValid("KingAaron"), true},
+		{TestDB.CheckIfUserIsValid("testUser"), false},
+		{TestDB.CheckIfUserIsValid("Spiderman"), true},
+		{TestDB.CheckIfUserIsValid("SPiDerMan"), false},
+		{TestDB.CheckIfUserIsValid("SantaClause"), true},
+		{TestDB.CheckIfUserIsValid("SantaClause1"), false},
+	}
+	for _, test := range tests {
+		if output := test.actual; output != test.expected {
+			t.Errorf("Test Failed: expected #{test.expected}, received #{test.actual}")
+		}
+	}
 }
