@@ -1,22 +1,26 @@
 package Login
 
-import "testing"
+import (
+	UserDBTest2 "home/aaron/snap/go/GolandProjects/ParkingSpace/Databases/UserDBTest"
+	"testing"
+)
 
-type credentials struct {
-	userName string
-	password string
-}
-
-func TestLogin(t *testing.T) {
+func TestCheckIfUserIsValid(t *testing.T) {
+	TestDB := UserDBTest2.SetUpUserDBTest()
 	var tests = []struct {
-		userName string
-		Password string
+		actual   bool
 		expected bool
 	}{
-		{"TestUser", "TestPassword", true},
-		{"FakeUser", "FakePassword", false},
-		{"testuser", "testpassword", false},
-		{"PeterParker", "Manhattan", true},
-		{"PETERpaRKer", "Manhattan", false},
-		{"PeterParker", "MANHATTAn", false}}
+		{TestDB.CheckIfUserIsValid("KingAaron"), true},
+		{TestDB.CheckIfUserIsValid("testUser"), false},
+		{TestDB.CheckIfUserIsValid("Spiderman"), true},
+		{TestDB.CheckIfUserIsValid("SPiDerMan"), false},
+		{TestDB.CheckIfUserIsValid("SantaClause"), true},
+		{TestDB.CheckIfUserIsValid("SantaClause1"), false},
+	}
+	for _, test := range tests {
+		if output := test.actual; output != test.expected {
+			t.Errorf("Test Failed: expected #{test.expected}, received #{test.actual}")
+		}
+	}
 }

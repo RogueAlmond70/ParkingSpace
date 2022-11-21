@@ -1,7 +1,7 @@
 package UserDBTest
 
 import (
-	"home/aaron/snap/go/GolandProjects/ParkingSpace/Databases/DBInterface"
+	"home/aaron/snap/go/GolandProjects/ParkingSpace/Login"
 	"home/aaron/snap/go/GolandProjects/ParkingSpace/Objects"
 )
 
@@ -18,8 +18,8 @@ var TestVehicles []Objects.Vehicle
 var TestVehicles2 []Objects.Vehicle
 var SpiderVehicles []Objects.Vehicle
 
-func SetUpUserDBTest() DBInterface.UserDBTest {
-	var UserDB DBInterface.UserDBTest
+func SetUpUserDBTest() Login.UserDBTest {
+	var UserDB Login.UserDBTest
 
 	SpiderCar.Model = "Astra"
 	SpiderCar.Brand = "Vauxhall"
