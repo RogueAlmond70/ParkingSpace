@@ -6,4 +6,6 @@ const (
 	DBPort = "db.port"
 	DBUser = "db.user"
 	DBName = "db.name"
+
+	Hash = "RpZ8Y972NYG68gKgy4uYCw&ved"
 )

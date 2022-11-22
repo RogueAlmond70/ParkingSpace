@@ -2,6 +2,8 @@ package UserDBTest
 
 import (
 	"database/sql"
+	"home/aaron/snap/go/GolandProjects/ParkingSpace/Constants"
+	"home/aaron/snap/go/GolandProjects/ParkingSpace/Databases/PasswordHashing"
 	"home/aaron/snap/go/GolandProjects/ParkingSpace/Objects"
 )
 
@@ -48,10 +50,14 @@ func (DB UserDBTest) CheckIfUserIsValid(username string) bool {
 	return false
 }
 
-func (UserDBTest) CheckIfPasswordIsCorrect(username string, password string) bool {
-	var isCorrect bool
-	// if the password is correct, set bool to true, else set it to false
-	return isCorrect
+func (DB UserDBTest) CheckIfPasswordIsCorrect(username string, password string) bool {
+	UserDB := DB.DB
+	for _, user := range UserDB {
+		if username == user.UserName {
+			return PasswordHashing.CheckPasswordHash(password, Constants.Hash)
+		}
+	}
+	return false
 }
 
 func (UserDBProd) CheckIfUserIsValid(username string) bool {
@@ -59,10 +65,4 @@ func (UserDBProd) CheckIfUserIsValid(username string) bool {
 	// if user is valid, set bool to true, else set it to false
 
 	return isValid
-}
-
-func (UserDBProd) CheckIfPasswordIsCorrect(username string, password string) bool {
-	var isCorrect bool
-	// if the password is correct, set bool to true, else set it to false
-	return isCorrect
 }
