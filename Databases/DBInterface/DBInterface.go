@@ -2,7 +2,7 @@ package DBInterface
 
 import (
 	"database/sql"
-	"home/aaron/snap/go/GolandProjects/ParkingSpace/Objects"
+	"home/aaron/snap/go/GolandProjects/ParkingSpace/Users"
 )
 
 type UserDB interface {
@@ -15,5 +15,5 @@ type UserDBProd struct {
 }
 
 type UserDBTest struct {
-	DB []Objects.User
+	DB []Users.User
 }

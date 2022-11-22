@@ -2,23 +2,22 @@ package UserDB
 
 import (
 	"home/aaron/snap/go/GolandProjects/ParkingSpace/Objects"
+	"home/aaron/snap/go/GolandProjects/ParkingSpace/Users"
 	"testing"
 )
 
-var TestUser Objects.User
-var TestUser2 Objects.User
-var AaronUser Objects.User
-var Spiderman Objects.User
-
-var TestCar Objects.Vehicle
-var TestCar2 Objects.Vehicle
-var SpiderCar Objects.Vehicle
-
-var TestVehicles []Objects.Vehicle
-var TestVehicles2 []Objects.Vehicle
-var SpiderVehicles []Objects.Vehicle
-
 func SetUpUserDBTest() UserDBTest {
+	var TestUser Users.User
+	var TestUser2 Users.User
+	var Spiderman Users.User
+
+	var TestCar Objects.Vehicle
+	var TestCar2 Objects.Vehicle
+	var SpiderCar Objects.Vehicle
+
+	var TestVehicles []Objects.Vehicle
+	var TestVehicles2 []Objects.Vehicle
+	var SpiderVehicles []Objects.Vehicle
 	var UserDB UserDBTest
 
 	SpiderCar.Model = "Astra"

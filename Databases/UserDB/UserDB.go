@@ -4,7 +4,7 @@ import (
 	"database/sql"
 	"home/aaron/snap/go/GolandProjects/ParkingSpace/Constants"
 	"home/aaron/snap/go/GolandProjects/ParkingSpace/Databases/PasswordHashing"
-	"home/aaron/snap/go/GolandProjects/ParkingSpace/Objects"
+	"home/aaron/snap/go/GolandProjects/ParkingSpace/Users"
 )
 
 // We need a login system that stores the users basic details, including their registration number(s) and the size/type of car.
@@ -37,7 +37,7 @@ type UserDBProd struct {
 }
 
 type UserDBTest struct {
-	DB []Objects.User
+	DB []Users.User
 }
 
 func (DB UserDBTest) CheckIfUserExists(username string) bool {
@@ -62,6 +62,7 @@ func (DB UserDBTest) CheckIfPasswordIsCorrect(username string, password string) 
 
 func (DB UserDBProd) CheckIfPasswordIsCorrect(username string, password string) bool {
 
+	return false
 }
 
 func (UserDBProd) CheckIfUserExists(username string) bool {
