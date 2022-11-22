@@ -65,12 +65,12 @@ func TestCheckIfUserIsValid(t *testing.T) {
 		actual   bool
 		expected bool
 	}{
-		{TestDB.CheckIfUserIsValid("KingAaron"), true},
-		{TestDB.CheckIfUserIsValid("testUser"), false},
-		{TestDB.CheckIfUserIsValid("Spiderman"), true},
-		{TestDB.CheckIfUserIsValid("SPiDerMan"), false},
-		{TestDB.CheckIfUserIsValid("SantaClause"), true},
-		{TestDB.CheckIfUserIsValid("SantaClause1"), false},
+		{TestDB.CheckIfUserExists("KingAaron"), true},
+		{TestDB.CheckIfUserExists("testUser"), false},
+		{TestDB.CheckIfUserExists("Spiderman"), true},
+		{TestDB.CheckIfUserExists("SPiDerMan"), false},
+		{TestDB.CheckIfUserExists("SantaClause"), true},
+		{TestDB.CheckIfUserExists("SantaClause1"), false},
 	}
 	for _, test := range tests {
 		if output := test.actual; output != test.expected {

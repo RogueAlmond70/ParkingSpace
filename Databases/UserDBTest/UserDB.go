@@ -40,7 +40,7 @@ type UserDBTest struct {
 	DB []Objects.User
 }
 
-func (DB UserDBTest) CheckIfUserIsValid(username string) bool {
+func (DB UserDBTest) CheckIfUserExists(username string) bool {
 	UserDB := DB.DB
 	for _, i := range UserDB {
 		if username == i.UserName {
@@ -60,7 +60,11 @@ func (DB UserDBTest) CheckIfPasswordIsCorrect(username string, password string) 
 	return false
 }
 
-func (UserDBProd) CheckIfUserIsValid(username string) bool {
+func (DB UserDBProd) CheckIfPasswordIsCorrect(username string, password string) bool {
+
+}
+
+func (UserDBProd) CheckIfUserExists(username string) bool {
 	var isValid bool
 	// if user is valid, set bool to true, else set it to false
 
