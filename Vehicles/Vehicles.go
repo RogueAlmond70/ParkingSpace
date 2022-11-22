@@ -5,5 +5,5 @@ type Vehicle struct {
 	Brand        string
 	Model        string
 	Size         string
-	registration string
+	Registration string
 }

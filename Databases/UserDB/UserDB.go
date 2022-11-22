@@ -5,6 +5,7 @@ import (
 	"home/aaron/snap/go/GolandProjects/ParkingSpace/Constants"
 	"home/aaron/snap/go/GolandProjects/ParkingSpace/Databases/PasswordHashing"
 	"home/aaron/snap/go/GolandProjects/ParkingSpace/Users"
+	"home/aaron/snap/go/GolandProjects/ParkingSpace/Vehicles"
 )
 
 // We need a login system that stores the users basic details, including their registration number(s) and the size/type of car.
@@ -48,6 +49,11 @@ func (DB UserDBTest) CheckIfUserExists(username string) bool {
 		}
 	}
 	return false
+}
+
+// When the user is added, they can register one vehicle. More vehicles can be added to the users profile at a later date
+func (DB UserDBTest) AddUser(firstname string, lastname string, password string, vehicle Vehicles.Vehicle) {
+
 }
 
 func (DB UserDBTest) CheckIfPasswordIsCorrect(username string, password string) bool {
