@@ -6,8 +6,8 @@ import (
 )
 
 type UserDB interface {
-	checkIfUserIsValid(username string) bool
-	checkIfPasswordIsCorrect(password string) bool
+	CheckIfUserExists(username string) bool
+	CheckIfPasswordIsCorrect(password string) bool
 }
 
 type UserDBProd struct {

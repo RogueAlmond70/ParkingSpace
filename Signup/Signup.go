@@ -9,8 +9,6 @@ func (DB DBInterface.UserDB) Signup(firstname string, lastname string, username 
 
 }
 
-func (Objects.User)Signup(DB DBInterface.UserDB)error{
-
+func (Objects.User) Signup(DB DBInterface.UserDB) error {
+	DB.CheckIfUserExists()
 }
-
-func

@@ -1,4 +1,4 @@
-package UserDBTest
+package UserDB
 
 import (
 	"database/sql"

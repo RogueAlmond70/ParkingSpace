@@ -1,4 +1,4 @@
-package UserDBTest
+package UserDB
 
 import (
 	"home/aaron/snap/go/GolandProjects/ParkingSpace/Objects"
