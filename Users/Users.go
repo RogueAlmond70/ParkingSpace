@@ -1,6 +1,7 @@
 package Users
 
 import (
+	"home/aaron/snap/go/GolandProjects/ParkingSpace/Databases/PasswordHashing"
 	"home/aaron/snap/go/GolandProjects/ParkingSpace/Vehicles"
 )
 
@@ -14,11 +15,12 @@ type User struct {
 
 // Create the user and add the vehicles in two separate stages.
 func CreateUser(firstname string, lastname string, username string, password string) User {
+	hashedPassword, _ := PasswordHashing.HashPassword(password)
 	NewUser := User{
 		FirstName: firstname,
 		LastName:  lastname,
 		UserName:  username,
-		Password:  password,
+		Password:  hashedPassword,
 		Vehicles:  nil,
 	}
 	return NewUser

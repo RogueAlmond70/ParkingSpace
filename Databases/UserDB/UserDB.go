@@ -56,6 +56,10 @@ func (DB UserDBTest) AddUser(user Users.User) {
 
 }
 
+func (DB UserDBProd) AddUser(user Users.User) {
+
+}
+
 func (DB UserDBTest) CheckIfPasswordIsCorrect(username string, password string) bool {
 	UserDB := DB.DB
 	for _, user := range UserDB {
