@@ -12,7 +12,7 @@ type Carpark struct {
 }
 
 // Decide if you want to have a database for this or just use in memory storage like a slice.
-var TestCarparks []Carpark
+var CarparksDBTest []Carpark
 
 // ProdCarparks will be a database table
 

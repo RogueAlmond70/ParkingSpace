@@ -1,4 +1,4 @@
-package DBInterface
+package UserDBInterface
 
 import (
 	"database/sql"
