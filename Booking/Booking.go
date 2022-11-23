@@ -5,7 +5,7 @@ import (
 	"home/aaron/snap/go/GolandProjects/ParkingSpace/Users"
 )
 
-// In here we should define a booking object, and all methods etc related to booking
+// In here we should define a booking object, and all methods that act on the booking object
 
 type Booking struct {
 	User       Users.User
@@ -18,3 +18,10 @@ type Booking struct {
 	Model      string
 	Car_Size   string
 }
+
+// We need storage for the bookings, in a database. See the BookingDB file for this.
+
+// In order to make a booking, we need some kind of booking service that knows the carpark you want to use, and knows the next available space
+// of the size you want to book, at the time you want to book it
+
+func (user User) MakeBooking()
